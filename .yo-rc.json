@@ -1,0 +1,6 @@
+{
+  "generator-mcfly-ng2": {
+    "appname": "ngrx-test",
+    "clientFolder": "client"
+  }
+}
