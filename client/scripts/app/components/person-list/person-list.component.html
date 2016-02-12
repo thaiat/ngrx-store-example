@@ -1,0 +1,9 @@
+<ul>
+
+    <input type="text" [(ngModel)]="currentPerson.firstname">
+    <input type="text" [(ngModel)]="currentPerson.lastname">
+    <button (click)="add(currentPerson)">Create</button>
+    <li *ngFor="#person of persons | async">[{{person.id}}] - {{person.firstname}} {{person.lastname}}
+        <button (click)="delete(person)">Delete</button>
+    </li>
+</ul>
