@@ -1,6 +1,6 @@
 /* beautify ignore:start */
 import {Injectable} from 'angular2/core';
-import {Http, Headers, Request} from 'angular2/http';
+import {Http, Headers, Request, RequestMethod} from 'angular2/http';
 import {Observable} from 'rxjs';
 /* beautify ignore:end */
 
@@ -15,7 +15,27 @@ export class HttpJson {
 
     }
 
-    execute(options: any): Observable<any> {
+    executePut(options: any): Observable<any> {
+        options.method = RequestMethod.Put;
+        return this.execute(options);
+    }
+
+    executeGet(options: any): Observable<any> {
+        options.method = RequestMethod.Get;
+        return this.execute(options);
+    }
+
+    executePost(options: any): Observable<any> {
+        options.method = RequestMethod.Post;
+        return this.execute(options);
+    }
+
+    executeDelete(options: any): Observable<any> {
+        options.method = RequestMethod.Delete;
+        return this.execute(options);
+    }
+
+    private execute(options: any): Observable<any> {
         if (options.body) {
             if (typeof options.body !== 'string') {
                 options.body = JSON.stringify(options.body);
@@ -28,4 +48,5 @@ export class HttpJson {
             .request(new Request(options))
             .map(res => res.json());
     }
+
 }

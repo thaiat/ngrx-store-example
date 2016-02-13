@@ -1,7 +1,6 @@
 /* beautify ignore:start */
 import {Injectable} from 'angular2/core';
 import {HttpJson} from '../http-json/http-json.service';
-import {RequestMethod} from 'angular2/http';
 import {Observable} from 'rxjs';
 /* beautify ignore:end */
 
@@ -18,24 +17,21 @@ export class LoopbackApi<T extends PersistedModel> {
     protected httpJson: HttpJson;
 
     getAll(): Observable<Array<T>> {
-        return this.httpJson.execute({
-            url: `${BASE_URL}/${this.endpoint}`,
-            method: RequestMethod.Get
+        return this.httpJson.executeGet({
+            url: `${BASE_URL}/${this.endpoint}`
         });
     }
 
-	create(entity: T): Observable<T> {
-        return this.httpJson.execute({
+    create(entity: T): Observable<T> {
+        return this.httpJson.executePost({
             url: `${BASE_URL}/${this.endpoint}`,
-            method: RequestMethod.Post,
             body: entity
         });
     }
 
-	delete(entity: T): Observable<T> {
-        return this.httpJson.execute({
-            url: `${BASE_URL}/${this.endpoint}/${entity.id}`,
-            method: RequestMethod.Delete
+    delete(entity: T): Observable<T> {
+        return this.httpJson.executeDelete({
+            url: `${BASE_URL}/${this.endpoint}/${entity.id}`
         }).map(res => entity);
     }
 }
