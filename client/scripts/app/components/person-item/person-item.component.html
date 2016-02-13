@@ -1,0 +1,4 @@
+<div>
+    <span *ngIf="person">[{{person.id}}] - {{person.firstname}} {{person.lastname}}</span>
+    <button (click)="delete.emit(person)">Delete</button>
+</div>

@@ -1,11 +1,11 @@
 /* beautify ignore:start */
 import {Action} from '@ngrx/store';
-import {Person} from '../interfaces/person/person.interface';
+import {Person} from '../interfaces';
 /* beautify ignore:end */
 
 export var PERSON_ACTION_TYPE = {
     PERSON_LOAD: 'PERSON_LOAD',
-    PERSON_ADD: 'PERSON_ADD',
+    PERSON_CREATE: 'PERSON_CREATE',
     PERSON_DELETE: 'PERSON_DELETE'
 };
 
@@ -15,7 +15,7 @@ export const persons = (state: Array<Person> = [], action: Action) => {
         case PERSON_ACTION_TYPE.PERSON_LOAD:
             return action.payload;
 
-        case PERSON_ACTION_TYPE.PERSON_ADD:
+        case PERSON_ACTION_TYPE.PERSON_CREATE:
             return [...state, action.payload];
 
         case PERSON_ACTION_TYPE.PERSON_DELETE:

@@ -1,9 +1,9 @@
 <ul>
 
-    <input type="text" [(ngModel)]="currentPerson.firstname">
-    <input type="text" [(ngModel)]="currentPerson.lastname">
+    <input type="text" [(ngModel)]="currentPerson.firstname" placeholder="First name">
+    <input type="text" [(ngModel)]="currentPerson.lastname" placeholder="Last name">
     <button (click)="add(currentPerson)">Create</button>
-    <li *ngFor="#person of persons | async">[{{person.id}}] - {{person.firstname}} {{person.lastname}}
-        <button (click)="delete(person)">Delete</button>
-    </li>
+    <button (click)="reload()">Reload</button>
+
+    <person-item *ngFor="#person of persons | async" [person]="person" (delete)="delete($event)"></person-item>
 </ul>

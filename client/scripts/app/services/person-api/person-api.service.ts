@@ -1,27 +1,27 @@
 /* beautify ignore:start */
 import {Injectable} from 'angular2/core';
-import {Request} from '../request/request.service';
+import {HttpJson} from '../http-json/http-json.service';
 import {RequestMethod} from 'angular2/http';
-import {Person} from '../../interfaces/person/person.interface';
+import {Person} from '../../interfaces';
 /* beautify ignore:end */
 
 @Injectable()
 export class PersonApi {
 
     private url = 'http://localhost:3000/api/Persons';
-    constructor(private request: Request) {
+    constructor(private httpJson: HttpJson) {
 
     }
 
     getAll() {
-        return this.request.request({
+        return this.httpJson.execute({
             url: this.url,
             method: RequestMethod.Get
         });
     }
 
     create(person: Person) {
-        return this.request.request({
+        return this.httpJson.execute({
             url: this.url,
             method: RequestMethod.Post,
             body: person
@@ -29,10 +29,9 @@ export class PersonApi {
     }
 
     delete(person: Person) {
-        return this.request.request({
+        return this.httpJson.execute({
             url: this.url + '/' + person.id,
             method: RequestMethod.Delete
         });
     }
-
 }

@@ -1,16 +1,16 @@
 /* beautify ignore:start */
 import {Injectable} from 'angular2/core';
-import {Http, Headers, Request as Req} from 'angular2/http';
+import {Http, Headers, Request} from 'angular2/http';
 import {Observable} from 'rxjs';
 /* beautify ignore:end */
 
 @Injectable()
-export class Request {
+export class HttpJson {
     constructor(private http: Http) {
 
     }
 
-    request(options: any): Observable<any> {
+    execute(options: any): Observable<any> {
         if (options.body) {
             if (typeof options.body !== 'string') {
                 options.body = JSON.stringify(options.body);
@@ -18,10 +18,12 @@ export class Request {
         }
 
         options.headers = new Headers({
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         });
 
-        return this.http.request(new Req(options))
+        return this.http
+            .request(new Request(options))
             .map(res => res.json());
     }
 }

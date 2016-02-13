@@ -6,11 +6,9 @@ import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {MainComponent} from './components/main/main.component';
 import {provideStore} from '@ngrx/store';
-import {counter} from './reducers/counter';
-import {persons} from './reducers/persons';
-import {CounterActions} from './actions/CounterActions';
-import {PersonActions} from './actions/PersonActions';
-import {Request} from './services/request/request.service';
+import {counter, persons} from './reducers';
+import {CounterActions, PersonActions} from './actions';
+import {HttpJson} from './services/http-json/http-json.service';
 import {PersonApi} from './services/person-api/person-api.service';
 /* beautify ignore:end */
 
@@ -29,6 +27,6 @@ bootstrap(MainComponent, [
     }),
     CounterActions,
     PersonActions,
-    Request,
+    HttpJson,
     PersonApi
 ]);
