@@ -1,20 +1,17 @@
 /* beautify ignore:start */
-import {
-it,
-inject,
-//injectAsync,
-beforeEachProviders
-//TestComponentBuilder
-} from 'angular2/testing';
+import {it, inject, beforeEachProviders} from 'angular2/testing';
 import {LoopbackApi} from './loopback-api.service.ts';
-import {Person} from '../../interfaces';
-/* beautify ignore:end */
+
+interface Dummy {
+    id?: string;
+    name: string;
+}
 
 describe('Service: LoopbackApi', () => {
 
     beforeEachProviders(() => [LoopbackApi]);
 
-    it('should be defined', inject([LoopbackApi], (service: LoopbackApi<Person>) => {
+	it('should be defined', inject([LoopbackApi], (service: LoopbackApi<Dummy>) => {
         expect(service).toBeDefined();
     }));
 
