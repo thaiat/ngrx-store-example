@@ -6,10 +6,11 @@ import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from 'angular2
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {MainComponent} from './components/main/main.component';
 import {provideStore} from '@ngrx/store';
-import {counter, persons} from './reducers';
-import {CounterActions, PersonActions} from './actions';
+import {counter, persons, books} from './reducers';
+import {CounterActions, PersonActions, BookActions} from './actions';
 import {HttpJson} from './services/http-json/http-json.service';
 import {PersonApi} from './services/person-api/person-api.service';
+import {BookApi} from './services/book-api/book-api.service';
 /* beautify ignore:end */
 
 //import {enableProdMode} from 'angular2/core';
@@ -23,10 +24,13 @@ bootstrap(MainComponent, [
     }),
     provideStore({
         counter,
-        persons
+        persons,
+        books
     }),
     CounterActions,
     PersonActions,
+    BookActions,
     HttpJson,
-    PersonApi
+    PersonApi,
+    BookApi
 ]);
