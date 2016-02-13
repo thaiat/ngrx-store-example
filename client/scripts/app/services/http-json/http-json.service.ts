@@ -4,6 +4,11 @@ import {Http, Headers, Request} from 'angular2/http';
 import {Observable} from 'rxjs';
 /* beautify ignore:end */
 
+const HEADERS = new Headers({
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+});
+
 @Injectable()
 export class HttpJson {
     constructor(private http: Http) {
@@ -17,10 +22,7 @@ export class HttpJson {
             }
         }
 
-        options.headers = new Headers({
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        });
+        options.headers = HEADERS;
 
         return this.http
             .request(new Request(options))
