@@ -33,11 +33,9 @@ export class BigTableContainerComponent {
                     }
                 }
             }
-
-            return Object.assign(grid, {
-                visibleCount,
-                dataPoints
-            });
+            grid.visibleCount = visibleCount;
+            grid.dataPoints = dataPoints;
+            return grid;
         });
         this.gridActions.mount();
     }

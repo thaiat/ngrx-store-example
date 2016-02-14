@@ -3,6 +3,8 @@ import { Book } from '../book/book.interface';
 export interface Grid {
     filter?: string;
     data: Array<Row>;
+    visibleCount?: number;
+    dataPoints?: number;
 }
 
 export interface Row {
