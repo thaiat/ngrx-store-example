@@ -1,7 +1,5 @@
-/* beautify ignore:start */
-import {Action} from '@ngrx/store';
-import {Person} from '../interfaces';
-/* beautify ignore:end */
+import { Action } from '@ngrx/store';
+import { Person } from '../interfaces';
 
 export var PERSON_ACTION_TYPE = {
     PERSON_LOAD: 'PERSON_LOAD',

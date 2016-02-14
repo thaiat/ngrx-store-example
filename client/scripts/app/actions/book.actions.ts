@@ -1,11 +1,9 @@
-/* beautify ignore:start */
-import {Injectable} from 'angular2/core';
-import {Store, Action} from '@ngrx/store';
-import {AppStore, Book} from '../interfaces';
-import {BOOK_ACTION_TYPE} from '../reducers';
-import {BehaviorSubject, Observable} from 'rxjs';
-import {BookApi} from '../services/book-api/book-api.service';
-/* beautify ignore:end */
+import { Injectable } from 'angular2/core';
+import { Store, Action } from '@ngrx/store';
+import { AppStore, Book } from '../interfaces';
+import { BOOK_ACTION_TYPE } from '../reducers';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { BookApi } from '../services/book-api/book-api.service';
 
 @Injectable()
 export class BookActions {

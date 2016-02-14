@@ -1,7 +1,5 @@
-/* beautify ignore:start */
-import {Action} from '@ngrx/store';
-import {Book} from '../interfaces';
-/* beautify ignore:end */
+import { Action } from '@ngrx/store';
+import { Book } from '../interfaces';
 
 export var BOOK_ACTION_TYPE = {
     BOOK_LOAD: 'BOOK_LOAD',

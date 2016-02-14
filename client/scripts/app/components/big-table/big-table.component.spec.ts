@@ -1,18 +1,20 @@
+/* beautify ignore:start */
 import {
-it,
-//inject,
-injectAsync,
-beforeEachProviders,
-TestComponentBuilder
+	it,
+	//inject,
+	injectAsync,
+	beforeEachProviders,
+	TestComponentBuilder
 } from 'angular2/testing';
-import { BookListComponent } from './book-list.component.ts';
+import {BigTableComponent} from './big-table.component.ts';
+/* beautify ignore:end */
 
-describe('Component: BookListComponent', () => {
+describe('Component: BigTableComponent', () => {
 
     beforeEachProviders(() => []);
 
     it('should be defined', injectAsync([TestComponentBuilder], (tcb) => {
-        return tcb.createAsync(BookListComponent)
+        return tcb.createAsync(BigTableComponent)
             .then((fixture) => {
                 fixture.detectChanges();
                 let element = fixture.debugElement.nativeElement;

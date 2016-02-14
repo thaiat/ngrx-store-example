@@ -1,6 +1,4 @@
-/* beautify ignore:start */
-import {Action} from '@ngrx/store';
-/* beautify ignore:end */
+import { Action } from '@ngrx/store';
 
 export var COUNTER_ACTION_TYPE = {
     COUNTER_INCREASE: 'COUNTER_INCREASE',

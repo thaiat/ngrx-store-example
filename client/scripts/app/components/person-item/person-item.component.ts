@@ -1,7 +1,5 @@
-/* beautify ignore:start */
-import {Component, Input, Output, EventEmitter} from 'angular2/core';
-import {Person} from '../../interfaces';
-/* beautify ignore:end */
+import { Component, Input, Output, EventEmitter } from 'angular2/core';
+import { Person } from '../../interfaces';
 
 @Component({
     selector: 'person-item',

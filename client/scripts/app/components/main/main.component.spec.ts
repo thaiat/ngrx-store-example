@@ -1,13 +1,11 @@
-/* beautify ignore:start */
 import {
-	it,
-	//inject,
-	injectAsync,
-	beforeEachProviders,
-	TestComponentBuilder
+it,
+//inject,
+injectAsync,
+beforeEachProviders,
+TestComponentBuilder
 } from 'angular2/testing';
-import {MainComponent} from './main.component.ts';
-/* beautify ignore:end */
+import { MainComponent } from './main.component.ts';
 
 describe('Component: MainComponent', () => {
 

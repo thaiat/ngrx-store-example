@@ -1,8 +1,6 @@
-/* beautify ignore:start */
-import {Injectable} from 'angular2/core';
-import {HttpJson} from '../http-json/http-json.service';
-import {Observable} from 'rxjs';
-/* beautify ignore:end */
+import { Injectable } from 'angular2/core';
+import { HttpJson } from '../http-json/http-json.service';
+import { Observable } from 'rxjs';
 
 const BASE_URL = 'http://localhost:3000/api';
 

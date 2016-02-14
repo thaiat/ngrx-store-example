@@ -1,13 +1,11 @@
-/* beautify ignore:start */
 import {
-	it,
-	//inject,
-	injectAsync,
-	beforeEachProviders,
-	TestComponentBuilder
+it,
+//inject,
+injectAsync,
+beforeEachProviders,
+TestComponentBuilder
 } from 'angular2/testing';
-import {PersonItemComponent} from './person-item.component.ts';
-/* beautify ignore:end */
+import { PersonItemComponent } from './person-item.component.ts';
 
 describe('Component: PersonItemComponent', () => {
 

@@ -1,13 +1,11 @@
-/* beautify ignore:start */
 import {
-	it,
-	//inject,
-	injectAsync,
-	beforeEachProviders,
-	TestComponentBuilder
+it,
+//inject,
+injectAsync,
+beforeEachProviders,
+TestComponentBuilder
 } from 'angular2/testing';
-import {CounterComponent} from './counter.component.ts';
-/* beautify ignore:end */
+import { CounterComponent } from './counter.component.ts';
 
 describe('Component: CounterComponent', () => {
 

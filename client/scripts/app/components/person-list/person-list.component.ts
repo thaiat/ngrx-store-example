@@ -1,16 +1,15 @@
-/* beautify ignore:start */
-import {Component, ChangeDetectionStrategy} from 'angular2/core';
-import {PersonActions} from '../../actions';
-import {Person} from '../../interfaces';
-import {Observable} from 'rxjs';
-import {PersonItemComponent} from '../person-item/person-item.component';
-/* beautify ignore:end */
+import { Component, ChangeDetectionStrategy } from 'angular2/core';
+import { PersonActions } from '../../actions';
+import { Person } from '../../interfaces';
+import { Observable } from 'rxjs';
+import { PersonItemComponent } from '../person-item/person-item.component';
 
 @Component({
     selector: 'person-list',
     styles: [require('./person-list.component.scss').toString()],
     template: require('./person-list.component.html'),
     directives: [PersonItemComponent],
+    providers: [],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PersonListComponent {

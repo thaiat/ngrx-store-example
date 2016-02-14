@@ -1,11 +1,9 @@
-/* beautify ignore:start */
-import {Injectable} from 'angular2/core';
-import {Store, Action} from '@ngrx/store';
-import {AppStore, Person} from '../interfaces';
-import {PERSON_ACTION_TYPE} from '../reducers';
-import {BehaviorSubject, Observable} from 'rxjs';
-import {PersonApi} from '../services/person-api/person-api.service';
-/* beautify ignore:end */
+import { Injectable } from 'angular2/core';
+import { Store, Action } from '@ngrx/store';
+import { AppStore, Person } from '../interfaces';
+import { PERSON_ACTION_TYPE } from '../reducers';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { PersonApi } from '../services/person-api/person-api.service';
 
 @Injectable()
 export class PersonActions {

@@ -1,9 +1,7 @@
-/* beautify ignore:start */
-import {Component, ChangeDetectionStrategy} from 'angular2/core';
-import {BookActions} from '../../actions';
-import {Observable} from 'rxjs';
-import {Book} from '../../interfaces';
-/* beautify ignore:end */
+import { Component, ChangeDetectionStrategy } from 'angular2/core';
+import { BookActions } from '../../actions';
+import { Observable } from 'rxjs';
+import { Book } from '../../interfaces';
 
 @Component({
     selector: 'book-list',

@@ -1,8 +1,6 @@
-/* beautify ignore:start */
-import {Component, ChangeDetectionStrategy} from 'angular2/core';
-import {Observable} from 'rxjs';
-import {CounterActions} from '../../actions';
-/* beautify ignore:end */
+import { Component, ChangeDetectionStrategy } from 'angular2/core';
+import { Observable } from 'rxjs';
+import { CounterActions } from '../../actions';
 
 @Component({
     selector: 'counter',

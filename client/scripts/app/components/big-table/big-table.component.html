@@ -1,0 +1,21 @@
+<form>
+    <strong>Filter Data</strong>:
+    <input type="text" [value]="form.filter" (input)="handleFilterChange( $event.target.value ); form.filter=$event.target.value" />
+    <span *ngIf="form.filter">
+        &mdash; Filtering
+        <strong>{{ form.filter }}</strong>
+        over {{ dataPoints | async}} data points, {{ visibleCount }} found.
+    </span>
+    <a *ngIf="(grid | async).length" (click)="unmountGrid()">Unmount Grid</a>
+    <a *ngIf="! (grid| async).length" (click)="remountGrid()">Remount Grid</a>
+</form>
+<table width="100%" cellspacing="2" [class.filtered]="form.filter">
+    <tr *ngFor="#row of grid | async">
+        <td>
+            {{ row.id }}
+        </td>
+        <td *ngFor="#item of row.items" class="item" [class.hidden]="item.isHiddenByFilter">
+            {{ item.value }}
+        </td>
+    </tr>
+</table>

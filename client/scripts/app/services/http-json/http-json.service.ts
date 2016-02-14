@@ -1,8 +1,6 @@
-/* beautify ignore:start */
-import {Injectable} from 'angular2/core';
-import {Http, Headers, Request, RequestMethod} from 'angular2/http';
-import {Observable} from 'rxjs';
-/* beautify ignore:end */
+import { Injectable } from 'angular2/core';
+import { Http, Headers, Request, RequestMethod } from 'angular2/http';
+import { Observable } from 'rxjs';
 
 const HEADERS = new Headers({
     'Content-Type': 'application/json',

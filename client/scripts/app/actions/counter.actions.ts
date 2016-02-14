@@ -1,10 +1,8 @@
-/* beautify ignore:start */
-import {Injectable} from 'angular2/core';
-import {AppStore} from '../interfaces';
-import {Store, Action} from '@ngrx/store';
-import {COUNTER_ACTION_TYPE} from '../reducers/counter';
-import {BehaviorSubject, Observable} from 'rxjs';
-/* beautify ignore:end */
+import { Injectable } from 'angular2/core';
+import { AppStore } from '../interfaces';
+import { Store, Action } from '@ngrx/store';
+import { COUNTER_ACTION_TYPE } from '../reducers';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable()
 export class CounterActions {

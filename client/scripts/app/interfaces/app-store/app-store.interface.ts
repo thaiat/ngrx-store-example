@@ -1,9 +1,22 @@
-/* beautify ignore:start */
-import {Person} from '../person/person.interface';
-import {Book} from '../book/book.interface';
-/* beautify ignore:end */
+import { Person } from '../person/person.interface';
+import { Book } from '../book/book.interface';
+export interface Grid extends Array<Row> {
+
+}
+export interface Row {
+    id: number;
+    items: Array<Item>;
+}
+
+export interface Item {
+    id: string;
+    value: string;
+    isHiddenByFilter: boolean;
+}
+
 export interface AppStore {
     counter: number;
     persons: Array<Person>;
     books: Array<Book>;
+    grid: Grid;
 }
