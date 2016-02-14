@@ -16,7 +16,8 @@ export class GridActions {
 
     constructor(private store: Store<AppStore>) {
         this.grid$ = store.select(state => state.grid);
-        this.actions$.subscribe(action => store.dispatch(action));
+        this.actions$
+            .subscribe(action => store.dispatch(action));
     }
 
     mount(rowCount = 1000, columnCount = 10) {
@@ -36,7 +37,6 @@ export class GridActions {
     }
 
     handleFilterChange(newValue) {
-
         return this.actions$.next({
             type: GRID_ACTION_TYPE.GRID_FILTER,
             payload: newValue

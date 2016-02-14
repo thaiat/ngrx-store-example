@@ -6,7 +6,12 @@ export var GRID_ACTION_TYPE = {
     GRID_FILTER: 'GRID_FILTER'
 };
 
-let generateGrid = function(rowCount: number, columCount: number): Grid {
+const initialState: Grid = {
+    filter: '',
+    data: []
+};
+
+const generateGrid = function(rowCount: number, columCount: number): Grid {
     let valuePoints = [
         'Daenerys', 'Jon', 'Sansa', 'Arya', 'Stannis', 'Gregor', 'Tyrion',
         'Theon', 'Joffrey', 'Ramsay', 'Cersei', 'Bran', 'Margaery',
@@ -14,7 +19,7 @@ let generateGrid = function(rowCount: number, columCount: number): Grid {
         'Jorah', 'Petyr', 'Tommen', 'Sandor', 'Oberyn', 'Drogo', 'Ygritte'
     ];
     let valueIndex = 0;
-    let grid: Grid = [];
+    let grid: Grid = Object.assign({}, initialState);
     for (let r = 0; r < rowCount; r++) {
 
         let row: Row = {
@@ -34,36 +39,30 @@ let generateGrid = function(rowCount: number, columCount: number): Grid {
                 valueIndex = 0;
             }
         }
-        grid.push(row);
+        grid.data.push(row);
     }
     return grid;
 };
 
-export const grid = (state: Grid = [], action: Action) => {
+export const grid = (state: Grid = initialState, action: Action) => {
     switch (action.type) {
         case GRID_ACTION_TYPE.GRID_MOUNT:
             return generateGrid(action.payload.rowCount, action.payload.columnCount);
 
         case GRID_ACTION_TYPE.GRID_UNMOUNT:
-            return [];
+            return {
+                filter: '',
+                data: []
+            };
 
         case GRID_ACTION_TYPE.GRID_FILTER:
-            let newValue = action.payload;
-            let rowCount = state.length;
-            let columnCount = (state.length && state[0].items.length);
-            for (let r = 0; r < rowCount; r++) {
-                let row = state[r];
-                for (let c = 0; c < columnCount; c++) {
-                    let item = row.items[c];
-                    row.items[c] = Object.assign({}, item, {
-                        isHiddenByFilter: (newValue && (item.value.indexOf(newValue) === -1))
-                    });
+            console.log(action.payload);
+            return {
+                filter: action.payload,
+                data: state.data
+            };
 
-                }
-            }
-            return state;
         default:
             return state;
     }
-
 };

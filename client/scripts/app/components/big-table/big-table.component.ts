@@ -1,8 +1,6 @@
 /* beautify ignore:start */
-import {Component, ChangeDetectionStrategy} from 'angular2/core';
-import {GridActions} from '../../actions';
+import {Component, ChangeDetectionStrategy, Input, Output, EventEmitter} from 'angular2/core';
 import {Grid} from '../../interfaces';
-import {Observable} from 'rxjs';
 /* beautify ignore:end */
 
 @Component({
@@ -12,26 +10,9 @@ import {Observable} from 'rxjs';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BigTableComponent {
-    form = { filter: '' };
-    grid: Observable<Grid>;
-    dataPoints: Observable<number>;
-    constructor(private gridActions: GridActions) {
-        this.grid = this.gridActions.grid$;
-        //this.dataPoints = this.grid.map(g => g.length * g[0].items.length);
-        this.gridActions.mount();
-    }
+    @Input() grid: Grid;
+    @Output() unmount = new EventEmitter();
+    @Output() mount = new EventEmitter();
+    @Output() filter = new EventEmitter<string>();
 
-    handleFilterChange(value) {
-        this.gridActions.handleFilterChange(value);
-    }
-
-    unmountGrid() {
-        this.form.filter = '';
-        this.gridActions.unmout();
-    }
-
-    remountGrid() {
-        this.form.filter = '';
-        this.gridActions.mount();
-    }
-}
+};

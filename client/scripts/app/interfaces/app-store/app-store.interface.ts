@@ -1,8 +1,10 @@
 import { Person } from '../person/person.interface';
 import { Book } from '../book/book.interface';
-export interface Grid extends Array<Row> {
-
+export interface Grid {
+    filter?: string;
+    data: Array<Row>;
 }
+
 export interface Row {
     id: number;
     items: Array<Item>;
