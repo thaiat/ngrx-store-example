@@ -17,17 +17,27 @@ export class BigTableContainerComponent {
     grid: Observable<Grid>;
     constructor(private gridActions: GridActions) {
         this.grid = this.gridActions.grid$.map(grid => {
+            let visibleCount = 0;
+
             let filter = grid.filter;
             let rowCount = grid.data.length;
             let columnCount = (grid.data.length && grid.data[0].items.length);
+            let dataPoints = rowCount * columnCount;
             for (let r = 0; r < rowCount; r++) {
                 let row = grid.data[r];
                 for (let c = 0; c < columnCount; c++) {
                     let item = row.items[c];
                     row.items[c].isHiddenByFilter = (filter && (item.value.indexOf(filter) === -1));
+                    if (!item.isHiddenByFilter) {
+                        visibleCount++;
+                    }
                 }
             }
-            return grid;
+
+            return Object.assign(grid, {
+                visibleCount,
+                dataPoints
+            });
         });
         this.gridActions.mount();
     }

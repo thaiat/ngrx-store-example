@@ -4,7 +4,7 @@
     <span *ngIf="grid.filter">
         &mdash; Filtering
         <strong>{{ grid.filter }}</strong>
-        over {{ dataPoints }} data points, {{ visibleCount }} found.
+        over {{ grid.dataPoints }} data points, {{ grid.visibleCount }} found.
     </span>
     <a *ngIf="grid && grid.data.length" (click)="unmount.emit()">Unmount Grid</a>
     <a *ngIf="!(grid && grid.data.length)" (click)="mount.emit()">Remount Grid</a>
