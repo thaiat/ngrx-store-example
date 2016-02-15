@@ -30,7 +30,7 @@ export class GridActions {
         });
     }
 
-    unmout() {
+    unmount() {
         return this.actions$.next({
             type: GRID_ACTION_TYPE.GRID_UNMOUNT
         });

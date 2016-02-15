@@ -6,7 +6,7 @@ export var GRID_ACTION_TYPE = {
     GRID_FILTER: 'GRID_FILTER'
 };
 
-const initialState: Grid = {
+export var GRID_INITIAL_STATE: Grid = {
     filter: '',
     data: []
 };
@@ -19,7 +19,7 @@ const generateGrid = function(rowCount: number, columCount: number): Grid {
         'Jorah', 'Petyr', 'Tommen', 'Sandor', 'Oberyn', 'Drogo', 'Ygritte'
     ];
     let valueIndex = 0;
-    let grid: Grid = Object.assign({}, initialState);
+    let grid: Grid = Object.assign({}, GRID_INITIAL_STATE);
     for (let r = 0; r < rowCount; r++) {
 
         let row: Row = {
@@ -44,20 +44,19 @@ const generateGrid = function(rowCount: number, columCount: number): Grid {
     return grid;
 };
 
-export const grid = (state: Grid = initialState, action: Action) => {
+export const grid = (state: Grid = GRID_INITIAL_STATE, action: Action) => {
     switch (action.type) {
         case GRID_ACTION_TYPE.GRID_MOUNT:
             return generateGrid(action.payload.rowCount, action.payload.columnCount);
 
         case GRID_ACTION_TYPE.GRID_UNMOUNT:
-            return {
+            return <Grid>{
                 filter: '',
                 data: []
             };
 
         case GRID_ACTION_TYPE.GRID_FILTER:
-            console.log(action.payload);
-            return {
+            return <Grid>{
                 filter: action.payload,
                 data: state.data
             };

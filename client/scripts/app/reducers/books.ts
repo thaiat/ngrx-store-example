@@ -7,7 +7,9 @@ export var BOOK_ACTION_TYPE = {
     BOOK_DELETE: 'BOOK_DELETE'
 };
 
-export const books = (state: Array<Book> = [], action: Action) => {
+export var BOOK_INITIAL_STATE = [];
+
+export const books = (state: Array<Book> = BOOK_INITIAL_STATE, action: Action) => {
 
     switch (action.type) {
         case BOOK_ACTION_TYPE.BOOK_LOAD:

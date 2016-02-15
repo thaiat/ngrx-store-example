@@ -1,6 +1,8 @@
 /* beautify ignore:start */
 import {Component, ChangeDetectionStrategy, Input, Output, EventEmitter} from 'angular2/core';
 import {Grid} from '../../interfaces';
+import {GRID_INITIAL_STATE} from '../../reducers';
+
 /* beautify ignore:end */
 
 @Component({
@@ -14,5 +16,7 @@ export class BigTableComponent {
     @Output() unmount = new EventEmitter();
     @Output() mount = new EventEmitter();
     @Output() filter = new EventEmitter<string>();
-
+    constructor() {
+        this.grid = GRID_INITIAL_STATE;
+    }
 };

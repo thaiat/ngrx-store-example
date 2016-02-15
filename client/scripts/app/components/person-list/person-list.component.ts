@@ -9,7 +9,6 @@ import { PersonItemComponent } from '../person-item/person-item.component';
     styles: [require('./person-list.component.scss').toString()],
     template: require('./person-list.component.html'),
     directives: [PersonItemComponent],
-    providers: [],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PersonListComponent {

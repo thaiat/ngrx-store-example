@@ -45,7 +45,7 @@ export class BigTableContainerComponent {
     }
 
     unmountGrid() {
-        this.gridActions.unmout();
+        this.gridActions.unmount();
     }
 
     remountGrid() {

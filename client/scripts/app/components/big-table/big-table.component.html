@@ -9,7 +9,7 @@
     <a *ngIf="grid && grid.data.length" (click)="unmount.emit()">Unmount Grid</a>
     <a *ngIf="!(grid && grid.data.length)" (click)="mount.emit()">Remount Grid</a>
 </form>
-<table width="100%" cellspacing="2" [class.filtered]="grid.filter">
+<table *ngIf="grid && grid.data" width="100%" cellspacing="2" [class.filtered]="grid.filter">
     <tr *ngFor="#row of grid.data">
         <td>
             {{ row.id }}

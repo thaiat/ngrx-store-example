@@ -7,7 +7,9 @@ export var PERSON_ACTION_TYPE = {
     PERSON_DELETE: 'PERSON_DELETE'
 };
 
-export const persons = (state: Array<Person> = [], action: Action) => {
+export var PERSON_INITIAL_STATE = [];
+
+export const persons = (state: Array<Person> = PERSON_INITIAL_STATE, action: Action) => {
 
     switch (action.type) {
         case PERSON_ACTION_TYPE.PERSON_LOAD:
